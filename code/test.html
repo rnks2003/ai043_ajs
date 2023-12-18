@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Test Code</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+        <link rel="stylesheet" href="/home/ailab/Documents/ai043/styler.css">
+
+    </head>
+    <body>
+        <div ng-app="tester" ng-controller="testController">
+            <input type="text" ng-model="var" placeholder="value">
+            <br><br>
+            Value :  {{var}}
+        </div>
+
+        <script>
+            var app = angular.module("tester",[]);
+            app.controller("testController",function($scope){$scope.var=""});
+        </script>
+    </body>
+</html>
