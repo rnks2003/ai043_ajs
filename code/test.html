@@ -15,7 +15,8 @@
 
         <script>
             var app = angular.module("tester",[]);
-            app.controller("testController",function($scope){$scope.var=""});
+            $scope.varSet = function($scope){$scope.var=""};
+            app.controller("testController",$scope.varSet());
         </script>
     </body>
 </html>
