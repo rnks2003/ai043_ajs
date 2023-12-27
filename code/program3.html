@@ -33,13 +33,16 @@
               break;
 
             case "-":
-              $scope.result = $scope.num1 - $scope.num2;
+              $scope.result = parseFloat($scope.num1) - parseFloat($scope.num2);
               break;
             case "*":
-              $scope.result = $scope.num1 * $scope.num2;
+              $scope.result = parseFloat($scope.num1) * parseFloat($scope.num2);
               break;
             case "/":
-              $scope.result = $scope.num1 / $scope.num2;
+              $scope.result = parseFloat($scope.num1) / parseFloat($scope.num2);
+              if(!isFinite($scope.result) || isNaN($scope.result)){
+                $scope.result = "Divide by ZERO!!"
+              }
               break;
           }
         };
