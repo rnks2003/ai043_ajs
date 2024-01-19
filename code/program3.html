@@ -10,13 +10,10 @@
       <h1>Calculator App</h1>
       <input type="number" ng-model="num1" placeholder="Enter First Number" />
       <input type="number" ng-model="num2" placeholder="Enter Second Number" />
-      <select ng-model="operator">
-        <option value="+">+</option>
-        <option value="-">-</option>
-        <option value="*">*</option>
-        <option value="/">/</option>
-      </select>
-      <button ng-click="calculate()">Calculate</button>
+      <button ng-click="calculate('+')">+</button>
+      <button ng-click="calculate('-')">-</button>
+      <button ng-click="calculate('*')">*</button>
+      <button ng-click="calculate('/')">/</button>
       <p>Result: {{result}}</p>
     </div>
     <script>
@@ -26,7 +23,8 @@
         $scope.num2 = 0;
         $scope.operator = "+";
         $scope.result = 0;
-        $scope.calculate = function () {
+        $scope.calculate = function (operator) {
+          $scope.operator = operator;
           switch ($scope.operator) {
             case "+":
               $scope.result = parseFloat($scope.num1) + parseFloat($scope.num2);
