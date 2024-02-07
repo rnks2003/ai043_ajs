@@ -8,15 +8,26 @@
     </head>
     <body>
         <div ng-app="tester" ng-controller="testController">
-            <input type="text" ng-model="var" placeholder="value">
-            <br><br>
-            Value :  {{var}}
+            <table id="item">
+                <tr id="item" ng-repeat="row in items">
+                    <th>{{row}}</th>
+                </tr>
+            </table>
         </div>
 
         <script>
             var app = angular.module("tester",[]);
-            $scope.varSet = function($scope){$scope.var=""};
-            app.controller("testController",$scope.varSet());
+            app.controller("testController", function($scope){
+                $scope.items = []
+
+                for (let indexi = 0; indexi < 10; indexi++) {
+                    $scope.row = []
+                    for (let indexj = 0; indexj < 10; indexj++) {
+                        $scope.row.push(indexj);
+                    }
+                    $scope.items.push(row)
+                }
+            });
         </script>
     </body>
 </html>

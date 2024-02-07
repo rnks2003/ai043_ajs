@@ -10,3 +10,17 @@ button,input,select{
     color: azure;
     border-style: outset;
 }
+
+#item{
+    border: 2px double;
+    width: max-content;
+    height: max-content;
+    padding: 10px;
+}
+
+th{
+    border: 1px solid;
+    width: 10px;
+    height: 10px;
+}
+
