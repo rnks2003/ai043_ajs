@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Student Details</title>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
-</head>
-<body ng-app="myApp">
-<div ng-controller="appCtrl">
-<h1>Student Details</h1>
-<table border="2">
-<thead>
-<tr>
-<th>Name</th>
-<th>CGPA</th>
-</tr>
-</thead>
-<tbody>
-<tr ng-repeat="student in students">
-<td>{{student.name | uppercase}}</td>
-<td>{{student.cgpa}}</td>
-</tr>
-</tbody>
-</table>
+	<head>
+		<title>Student Details</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+	</head>
+	<body ng-app="myApp">
+		<div ng-controller="appCtrl">
+		<h1>Student Details</h1>
+		<table border="2">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>CGPA</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in students | orderBy: 'name'" >
+					<td>{{student.name | uppercase}}</td>
+					<td>{{student.cgpa}}</td>
+				</tr>
+			</tbody>
+		</table>
 
-<script>
-var app=angular.module('myApp', []);
-app.controller('appCtrl', function($scope) {
-$scope.students = [
-	{ name: "Aadi Yogi", cgpa: 9.6 },
-	{ name: "Jayaram Bhat", cgpa: 8.6 },
-	{ name: "Peter Parker", cgpa: 3.9 },
-	{ name: "Mary Jane Watson", cgpa: 3.7 }
-      ];
-    });
-</script>
-</body>
+		<script>
+			var app=angular.module('myApp', []);
+			app.controller('appCtrl', function($scope) {
+			$scope.students = [
+				{ name: "Aadi Yogi", cgpa: 9.6 },
+				{ name: "Jayaram Bhat", cgpa: 8.6 },
+				{ name: "Peter Parker", cgpa: 3.9 },
+				{ name: "Mary Jane Watson", cgpa: 3.7 }
+				];
+				});
+		</script>
+	</body>
 </html>
