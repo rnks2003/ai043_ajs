@@ -1,1 +1,1 @@
-My works in AngularJS
+My works in AngularJS (academic)
